@@ -51,4 +51,17 @@ class CustomListTest {
             cityList.deleteCity(cityNotInList);
         });
     }
+
+    @Test
+    void testCountCities() {
+        CustomList cityList = new CustomList();
+
+        assertEquals(0, cityList.countCities());
+
+        cityList.addCity(new City("Edmonton", "Alberta"));
+        assertEquals(1, cityList.countCities());
+
+        cityList.addCity(new City("Regina", "Saskatchewan"));
+        assertEquals(2, cityList.countCities());
+    }
 }
